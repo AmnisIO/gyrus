@@ -13,7 +13,7 @@ static void _pin_read (void *self) {
 static void _pin_read_start (ByteProducer *self, ByteListenerInternal *listener) {
   ArduinoUnoInputPinByteProducer *producer = (ArduinoUnoInputPinByteProducer *) self;
   producer->_listener = listener;
-  producer->_task_id = byte_stream_timer_set_timeout (_pin_read, producer, 1);
+  producer->_task_id = byte_stream_timer_set_interval (_pin_read, producer, 1);
 }
 
 static void _pin_read_stop (ByteProducer *self) {
@@ -21,9 +21,9 @@ static void _pin_read_stop (ByteProducer *self) {
   byte_stream_timer_clear_timeout (producer->_task_id);
 }
 
-ArduinoUnoInputPinByteProducer *arduino_uno_input_pin_byte_pruoducer_create (Byte pin) {
+ArduinoUnoInputPinByteProducer *arduino_uno_input_pin_byte_producer_create (Byte pin) {
   ArduinoUnoInputPinByteProducer *producer = xmalloc (sizeof (ArduinoUnoInputPinByteProducer));
-  byte_producer_initialize (producer, _pin_read_start, _pin_read_stop);
+  byte_producer_initialize ((ByteProducer *)producer, _pin_read_start, _pin_read_stop);
   producer->_pin = pin;
   return producer;
 }

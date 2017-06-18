@@ -11,4 +11,5 @@ GyrusTask *gyrus_task_create (gyrus_task_callback callback, void *argument, Gyru
   task->id = task_id_counter++;
   task->period = period;
   task->last_called_at = (Milliseconds) 0;
+  return task;
 }

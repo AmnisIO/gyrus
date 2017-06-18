@@ -8,11 +8,11 @@ typedef enum GyrusTaskType {
 } GyrusTaskType;
 
 typedef unsigned long Milliseconds;
-typedef int TaskIdentifier;
+typedef int GyrusTaskIdentifier;
 typedef void (*gyrus_task_callback)(void *argument);
 
 typedef struct GyrusTask {
-  TaskIdentifier id;
+  GyrusTaskIdentifier id;
   GyrusTaskType type;
   gyrus_task_callback callback;
   void *argument;

@@ -2,13 +2,13 @@
 
 static GyrusTimer *timer = NULL;
 
-static TaskIdentifier _set_timeout (gyrus_task_callback callback, void *argument, int delay) {
+static GyrusTaskIdentifier _set_timeout (gyrus_task_callback callback, void *argument, int delay) {
   GyrusTask *task = gyrus_task_create (callback, argument, GYRUS_TASK_TYPE_SINGLE, delay);
   timer->_tasks->push (timer->_tasks, task);
   return task->id;
 }
 
-static TaskIdentifier _set_interval (gyrus_task_callback callback, void *argument, int period) {
+static GyrusTaskIdentifier _set_interval (gyrus_task_callback callback, void *argument, int period) {
   GyrusTask *task = gyrus_task_create (callback, argument, GYRUS_TASK_TYPE_PERIODIC, period);
   timer->_tasks->push (timer->_tasks, task);
   return task->id;
@@ -18,7 +18,7 @@ static Boolean _find_by_id (void *left, void *right) {
   return ((GyrusTask *) left)->id == ((GyrusTask *) right)->id ? 1: 0;
 }
 
-static void _clear_timeout (TaskIdentifier id) {
+static void _clear_timeout (GyrusTaskIdentifier id) {
   VariableLengthArray *tasks = timer->_tasks;
   GyrusTask *to_find = xmalloc (sizeof (GyrusTask));
   to_find->id = id;

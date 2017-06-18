@@ -9,9 +9,9 @@ typedef Milliseconds (*gyrus_timer_get_milliseconds) ();
 typedef struct GyrusTimer {
   VariableLengthArray *_tasks;
   gyrus_timer_get_milliseconds get_milliseconds;
-  TaskIdentifier (*set_timeout) (gyrus_task_callback callback, void *argument, int delay);
-  TaskIdentifier (*set_interval) (gyrus_task_callback callback, void *argument, int period);
-  void (*clear_timeout) (TaskIdentifier id);
+  GyrusTaskIdentifier (*set_timeout) (gyrus_task_callback callback, void *argument, int delay);
+  GyrusTaskIdentifier (*set_interval) (gyrus_task_callback callback, void *argument, int period);
+  void (*clear_timeout) (GyrusTaskIdentifier id);
   void (*tick) ();
 } GyrusTimer;
 
