@@ -15,7 +15,7 @@ static TaskIdentifier _set_interval (gyrus_task_callback callback, void *argumen
 }
 
 static Boolean _find_by_id (void *left, void *right) {
-  return ((GyrusTask *) left)->id == ((GyrusTask *) right)->id;
+  return ((GyrusTask *) left)->id == ((GyrusTask *) right)->id ? 1: 0;
 }
 
 static void _clear_timeout (TaskIdentifier id) {
