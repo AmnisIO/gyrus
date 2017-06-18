@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include <unistd.h>
 #include "GyrusTimer.h"
 #include "ByteStream.h"
 #include "ArduinoUnoInputPinByteProducer.h"
@@ -21,6 +22,7 @@ int main () {
   pin10$->add_listener (pin10$, listener);
   for (int i = 0; i < 10; i++) {
     timer->tick ();
+    sleep (1);
   }
   return 0;
 }
