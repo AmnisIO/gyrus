@@ -1,7 +1,7 @@
-#ifndef C_ARDUINOUNOINPUTPINBYTEPRODUCER_H
-#define C_ARDUINOUNOINPUTPINBYTEPRODUCER_H
+#ifndef GYRUS_ARDUINO_UNO_ARDUINOBYTEPRODUCER_H
+#define GYRUS_ARDUINO_UNO_ARDUINOBYTEPRODUCER_H
 
-#include <ByteProducer.h>
+#include "ByteProducer.h"
 
 typedef struct ArduinoUnoInputPinByteProducer {
   ByteObservableType type;
@@ -14,4 +14,4 @@ typedef struct ArduinoUnoInputPinByteProducer {
 
 ArduinoUnoInputPinByteProducer *arduino_uno_input_pin_byte_pruoducer_create(int pin);
 
-#endif //C_ARDUINOUNOINPUTPINBYTEPRODUCER_H
+#endif //GYRUS_ARDUINO_UNO_ARDUINOBYTEPRODUCER_H

@@ -1,14 +1,14 @@
-#include <ByteListernerManager.h>
+#include "ByteListernerManager.h"
 #include "ArduinoUnoInputPinByteProducer.h"
 
-static void _from_array_start (ByteProducer *self, ByteListenerInternal *listener) {
+static void _pin_read_start (ByteProducer *self, ByteListenerInternal *listener) {
   ArduinoUnoInputPinByteProducer *producer = (ArduinoUnoInputPinByteProducer *) self;
 
   byte_listener_internal_next_get (listener) (listener, );
   byte_listener_internal_complete_get (listener) (listener);
 }
 
-static void _from_array_stop (ByteProducer *self) {
+static void _pin_read_stop (ByteProducer *self) {
 
 }
 
