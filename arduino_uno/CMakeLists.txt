@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.7)
 project(gyrus_arduino_uno)
 
 set(CMAKE_CXX_STANDARD 11)
+# Change as required
 set(RIVULET_SRC ../../rivulet)
 
 include_directories(
