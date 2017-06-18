@@ -9,9 +9,10 @@ typedef struct ArduinoUnoInputPinByteProducer {
   byte_producer_internal_stop _stop;
   byte_producer_start start;
   byte_producer_stop stop;
-  int pin;
+  Byte pin;
+  ByteListenerInternal *listener;
 } ArduinoUnoInputPinByteProducer;
 
-ArduinoUnoInputPinByteProducer *arduino_uno_input_pin_byte_pruoducer_create(int pin);
+ArduinoUnoInputPinByteProducer *arduino_uno_input_pin_byte_pruoducer_create(Byte pin);
 
 #endif //GYRUS_ARDUINO_UNO_ARDUINOBYTEPRODUCER_H
