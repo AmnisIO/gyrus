@@ -2,15 +2,16 @@ cmake_minimum_required(VERSION 3.7)
 project(gyrus_arduino_uno)
 
 set(CMAKE_CXX_STANDARD 11)
+set(RIVULET_SRC ../../rivulet)
 
 include_directories(
-        ../../furo/src
+        ${RIVULET_SRC}/src
         src)
 
 file(GLOB src src/*.c)
 file(GLOB test test/*.c)
 
-add_subdirectory("../../rivulet" rivulet)
+add_subdirectory("${RIVULET_SRC}" rivulet)
 
 add_library(gyrus_arduino_uno STATIC ${src})
 target_link_libraries(gyrus_arduino_uno rivulet)
