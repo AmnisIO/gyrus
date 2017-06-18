@@ -10,10 +10,10 @@ include_directories(
 file(GLOB src src/*.c)
 file(GLOB test test/*.c)
 
-add_subdirectory("../../furo" furo)
+add_subdirectory("../../rivulet" rivulet)
 
 add_library(gyrus_arduino_uno STATIC ${src})
-target_link_libraries(gyrus_arduino_uno furo)
+target_link_libraries(gyrus_arduino_uno rivulet)
 
 add_executable(gyrus_arduino_uno_test ${test})
-target_link_libraries(gyrus_arduino_uno_test LINK_PUBLIC furo gyrus_arduino_uno)
+target_link_libraries(gyrus_arduino_uno_test LINK_PUBLIC rivulet gyrus_arduino_uno)
