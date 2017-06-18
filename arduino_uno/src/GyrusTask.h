@@ -2,14 +2,14 @@
 #define GYRUS_ARDUINO_UNO_GYRUSTASKARDUINO_H
 
 typedef enum GyrusTaskType {
-  GYRUS_TASK_TYPE_NONE;
-  GYRUS_TASK_TYPE_SINGLE;
-  GYRUS_TASK_TYPE_PERIODIC;
+  GYRUS_TASK_TYPE_NONE,
+  GYRUS_TASK_TYPE_SINGLE,
+  GYRUS_TASK_TYPE_PERIODIC
 } GyrusTaskType;
 
 typedef unsigned long Milliseconds;
 typedef int TaskIdentifier;
-typedef void *(*gyrus_task_callback)(void *argument);
+typedef void (*gyrus_task_callback)(void *argument);
 
 typedef struct GyrusTask {
   TaskIdentifier id;
