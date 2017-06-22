@@ -1,7 +1,7 @@
-#include "ArduinoUnoSinks.h"
+#include "Sinks.h"
 
-ArduinoUnoSinks *arduino_uno_sinks_create () {
-  ArduinoUnoSinks *sinks = xmalloc (sizeof (ArduinoUnoSinks));
+Sinks *sinks_create () {
+  Sinks *sinks = xmalloc (sizeof (Sinks));
   sinks->D1$ = byte_stream_empty ();
   sinks->D2$ = byte_stream_empty ();
   sinks->D3$ = byte_stream_empty ();

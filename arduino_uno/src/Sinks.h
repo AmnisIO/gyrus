@@ -3,7 +3,7 @@
 
 #include <ByteStream.h>
 
-typedef struct ArduinoUnoSinks {
+typedef struct Sinks {
   ByteStream *D1$;
   ByteStream *D2$;
   ByteStream *D3$;
@@ -18,8 +18,8 @@ typedef struct ArduinoUnoSinks {
   ByteStream *D12$;
   ByteStream *D13$;
   ByteStream *LED$;
-} ArduinoUnoSinks;
+} Sinks;
 
-ArduinoUnoSinks *arduino_uno_sinks_create();
+Sinks *sinks_create ();
 
 #endif //GYRUS_ARDUINO_UNO_ARDUINOUNOSINKS_H
