@@ -16,5 +16,6 @@ typedef struct ArduinoUnoInputPinByteProducer {
 } ArduinoUnoInputPinByteProducer;
 
 ArduinoUnoInputPinByteProducer *arduino_uno_input_pin_byte_producer_create(Byte pin);
+ByteStream *arduino_uno_input_pin_byte_stream_create(Byte pin);
 
 #endif //GYRUS_ARDUINO_UNO_ARDUINOBYTEPRODUCER_H

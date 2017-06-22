@@ -1,3 +1,4 @@
+#include <ByteStream.h>
 #include "RivuletTimer.h"
 #include "Arduino.h"
 #include "ByteListernerManager.h"
@@ -23,7 +24,11 @@ static void _pin_read_stop (ByteProducer *self) {
 
 ArduinoUnoInputPinByteProducer *arduino_uno_input_pin_byte_producer_create (Byte pin) {
   ArduinoUnoInputPinByteProducer *producer = xmalloc (sizeof (ArduinoUnoInputPinByteProducer));
-  byte_producer_initialize ((ByteProducer *)producer, _pin_read_start, _pin_read_stop);
+  byte_producer_initialize ((ByteProducer *) producer, _pin_read_start, _pin_read_stop);
   producer->_pin = pin;
   return producer;
+}
+
+ByteStream *arduino_uno_input_pin_byte_stream_create (Byte pin) {
+  return byte_stream_create ((ByteProducer *) arduino_uno_input_pin_byte_producer_create (pin));
 }
