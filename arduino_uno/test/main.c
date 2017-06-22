@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include <RivuletTimer.h>
 #include "ByteStream.h"
-#include "ArduinoUnoInputPinByteProducer.h"
+#include "DigitalReadProducer.h"
 
 void _next (ByteListener *self, Byte v) {
   printf ("%d\n", v);
@@ -16,8 +16,7 @@ void _complete (ByteListener *self) {
 
 int main () {
   rivulet_timer_initialize (millis);
-  ArduinoUnoInputPinByteProducer *producer = arduino_uno_input_pin_byte_producer_create (10);
-  ByteStream *pin10$ = byte_stream_create ((ByteProducer *) producer);
+  ByteStream *pin10$ = digital_read_stream_create (10);
   ByteListener *listener = byte_listener_create (_next, _error, _complete);
   pin10$->add_listener (pin10$, listener);
   for (int i = 0; i < 10; i++) {
