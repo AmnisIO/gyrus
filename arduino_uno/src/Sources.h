@@ -3,7 +3,7 @@
 
 #include <ByteStream.h>
 
-typedef struct ArduinoUnoSources {
+typedef struct Sources {
   ByteStream *D1$;
   ByteStream *D2$;
   ByteStream *D3$;
@@ -18,8 +18,8 @@ typedef struct ArduinoUnoSources {
   ByteStream *D12$;
   ByteStream *D13$;
   ByteStream *LED$;
-} ArduinoUnoSources;
+} Sources;
 
-ArduinoUnoSources *arduino_uno_sources_create();
+Sources *sources_create ();
 
 #endif //GYRUS_ARDUINO_UNO_ARDUINOUNOSOURCES_H
