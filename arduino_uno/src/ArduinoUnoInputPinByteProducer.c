@@ -1,4 +1,4 @@
-#include "ByteStreamTimer.h"
+#include "RivuletTimer.h"
 #include "Arduino.h"
 #include "ByteListernerManager.h"
 #include "ArduinoUnoInputPinByteProducer.h"
@@ -13,12 +13,12 @@ static void _pin_read (void *self) {
 static void _pin_read_start (ByteProducer *self, ByteListenerInternal *listener) {
   ArduinoUnoInputPinByteProducer *producer = (ArduinoUnoInputPinByteProducer *) self;
   producer->_listener = listener;
-  producer->_task_id = byte_stream_timer_set_interval (_pin_read, producer, 1);
+  producer->_task_id = rivulet_timer->set_interval (_pin_read, producer, 1);
 }
 
 static void _pin_read_stop (ByteProducer *self) {
   ArduinoUnoInputPinByteProducer *producer = (ArduinoUnoInputPinByteProducer *) self;
-  byte_stream_timer_clear_timeout (producer->_task_id);
+  rivulet_timer->clear_task (producer->_task_id);
 }
 
 ArduinoUnoInputPinByteProducer *arduino_uno_input_pin_byte_producer_create (Byte pin) {

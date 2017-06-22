@@ -2,7 +2,7 @@
 #define GYRUS_ARDUINO_UNO_ARDUINOBYTEPRODUCER_H
 
 #include "ByteProducer.h"
-#include "GyrusTask.h"
+#include "RivuletTask.h"
 
 typedef struct ArduinoUnoInputPinByteProducer {
   ByteObservableType type;
@@ -12,7 +12,7 @@ typedef struct ArduinoUnoInputPinByteProducer {
   byte_producer_stop stop;
   Byte _pin;
   ByteListenerInternal *_listener;
-  GyrusTaskIdentifier _task_id;
+  RivuletTaskIdentifier _task_id;
 } ArduinoUnoInputPinByteProducer;
 
 ArduinoUnoInputPinByteProducer *arduino_uno_input_pin_byte_producer_create(Byte pin);
