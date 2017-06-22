@@ -12,5 +12,5 @@ int digitalRead (Byte pin) {
 }
 
 void digitalWrite (Byte pin, Byte value) {
-  printf ("wrote %d to pin %d\n", pin, value);
+  printf ("wrote %d to pin %d\n", value, pin);
 }
