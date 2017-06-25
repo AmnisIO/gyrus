@@ -1,20 +1,23 @@
 #include <Arduino.h>
-#include <RivuletTimer.h>
 #include <Sources.h>
 #include <Sinks.h>
-#include <DigitalWriteListener.h>
-#include <unistd.h>
+#include <Gyrus.h>
+
+static Byte HIGH = 1;
+static Byte LOW = 0;
+
+Byte toggle(Byte value) {
+  return value == HIGH ? LOW : HIGH;
+}
+
+Sinks* blink(Sources* arduino) {
+  Sinks* sinks = sinks_create();
+  ByteStream* sampler = byte_stream_periodic(500);
+  ByteStream* sampledInput = sampler->sample(sampler, arduino->D12);
+  sinks->LED = sampledInput->map(sampledInput, toggle);
+  return sinks;
+}
 
 int main () {
-  rivulet_timer_initialize (millis);
-  Sources *sources = sources_create ();
-  Sinks *sinks = sinks_create ();
-  sinks->LED = sources->D10->map_to (sources->D10, 15);
-  void *listener = digital_write_listener_create (13);
-  sinks->LED->add_listener (sinks->LED, (ByteListener *) listener);
-  for (int i = 0; i < 10; i++) {
-    rivulet_timer->tick ();
-    sleep (1);
-  }
-  return 0;
+  gyrus_run (blink);
 }

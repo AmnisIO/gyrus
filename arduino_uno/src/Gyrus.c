@@ -23,6 +23,7 @@ void gyrus_run (gyrus_application application) {
   Sources *sources = sources_create ();
   Sinks *sinks = application (sources);
   if (sinks == NULL) return;
+  rivulet_timer_initialize (millis);
   sinks->D1->add_listener (sinks->D1, digital_write_listener_create (D1));
   sinks->D2->add_listener (sinks->D2, digital_write_listener_create (D2));
   sinks->D3->add_listener (sinks->D3, digital_write_listener_create (D3));
@@ -38,7 +39,6 @@ void gyrus_run (gyrus_application application) {
   sinks->D13->add_listener (sinks->D13, digital_write_listener_create (D13));
   sinks->LED->add_listener (sinks->LED, digital_write_listener_create (LED));
   // TODO: Change to timer interrupts
-  rivulet_timer_initialize (millis);
   while (TRUE) {
     rivulet_timer->tick ();
   }
