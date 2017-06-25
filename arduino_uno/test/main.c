@@ -3,9 +3,6 @@
 #include <Sinks.h>
 #include <Gyrus.h>
 
-static Byte HIGH = 1;
-static Byte LOW = 0;
-
 Byte toggle (Byte value) {
   return value == HIGH ? LOW : HIGH;
 }
