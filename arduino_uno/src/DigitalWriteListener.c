@@ -24,6 +24,6 @@ ByteListener *digital_write_listener_create (Byte pin) {
   byte_listener_initialize ((ByteListener *) listener, _digital_write_next, _digital_write_error,
                             _digital_write_complete);
   listener->pin = pin;
-  listener->_started = ;
+  listener->_started = false;
   return (ByteListener *) listener;
 }
