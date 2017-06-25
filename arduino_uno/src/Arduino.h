@@ -2,6 +2,7 @@
 #define GYRUS_ARDUINO_UNO_ARDUINO_H
 
 #include "Byte.h"
+#include "Boolean.h"
 
 unsigned long millis();
 int digitalRead(Byte pin);

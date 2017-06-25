@@ -5,6 +5,8 @@ unsigned long milliseconds = 0UL;
 
 Byte INPUT = 0;
 Byte OUTPUT = 1;
+Boolean true = 1;
+Boolean false = 0;
 
 unsigned long millis () {
   return milliseconds++;
