@@ -9,5 +9,7 @@ void digitalWrite(Byte pin, Byte value);
 void pinMode(Byte pin, Byte mode);
 extern Byte INPUT;
 extern Byte OUTPUT;
+extern Boolean true;
+extern Boolean false;
 
 #endif //GYRUS_ARDUINO_UNO_ARDUINO_H
