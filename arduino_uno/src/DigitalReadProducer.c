@@ -6,7 +6,6 @@
 static void _pin_read (void *self) {
   DigitalReadProducer *producer = self;
   byte_listener_internal_next next = byte_listener_internal_next_get (producer->_listener);
-  pinMode (producer->_pin, INPUT);
   Byte value = (Byte) digitalRead (producer->_pin);
   next (producer->_listener, value);
 }
@@ -15,6 +14,7 @@ static void _pin_read_start (ByteProducer *self, ByteListenerInternal *listener)
   DigitalReadProducer *producer = (DigitalReadProducer *) self;
   producer->_listener = listener;
   producer->_task_id = rivulet_timer->set_interval (_pin_read, producer, 1);
+  pinMode (producer->_pin, INPUT);
 }
 
 static void _pin_read_stop (ByteProducer *self) {
