@@ -2,20 +2,22 @@
 
 Sinks *sinks_create () {
   Sinks *sinks = xmalloc (sizeof (Sinks));
-  sinks->D1 = byte_stream_empty ();
-  sinks->D2 = byte_stream_empty ();
-  sinks->D3 = byte_stream_empty ();
-  sinks->D4 = byte_stream_empty ();
-  sinks->D5 = byte_stream_empty ();
-  sinks->D6 = byte_stream_empty ();
-  sinks->D7 = byte_stream_empty ();
-  sinks->D8 = byte_stream_empty ();
-  sinks->D9 = byte_stream_empty ();
-  sinks->D10 = byte_stream_empty ();
-  sinks->D11 = byte_stream_empty ();
-  sinks->D12 = byte_stream_empty ();
-  sinks->D13 = byte_stream_empty ();
-  sinks->LED = sinks->D13;
+  // TODO: Investigate
+  // byte_stream_empty() and byte_stream_never() do not work, only NULL does
+  sinks->D1 = NULL;
+  sinks->D2 = NULL;
+  sinks->D3 = NULL;
+  sinks->D4 = NULL;
+  sinks->D5 = NULL;
+  sinks->D6 = NULL;
+  sinks->D7 = NULL;
+  sinks->D8 = NULL;
+  sinks->D9 = NULL;
+  sinks->D10 = NULL;
+  sinks->D11 = NULL;
+  sinks->D12 = NULL;
+  sinks->D13 = NULL;
+  sinks->LED = NULL;
   return sinks;
 }
 
