@@ -3,21 +3,21 @@
 #include "DigitalWriteListener.h"
 #include "Arduino.h"
 
-static Byte D1 = 1;
-static Byte D2 = 2;
-static Byte D3 = 3;
-static Byte D4 = 4;
-static Byte D5 = 5;
-static Byte D6 = 6;
-static Byte D7 = 7;
-static Byte D8 = 8;
-static Byte D9 = 9;
-static Byte D10 = 10;
-static Byte D11 = 11;
-static Byte D12 = 12;
-static Byte D13 = 13;
-static Byte LED = 13;
-static Byte TRUE = 1;
+static const Byte D1 = 1;
+static const Byte D2 = 2;
+static const Byte D3 = 3;
+static const Byte D4 = 4;
+static const Byte D5 = 5;
+static const Byte D6 = 6;
+static const Byte D7 = 7;
+static const Byte D8 = 8;
+static const Byte D9 = 9;
+static const Byte D10 = 10;
+static const Byte D11 = 11;
+static const Byte D12 = 12;
+static const Byte D13 = 13;
+static const Byte LED = 13;
+static const Byte TRUE = 1;
 
 void gyrus_run (gyrus_application application) {
   Sources *sources = sources_create ();
