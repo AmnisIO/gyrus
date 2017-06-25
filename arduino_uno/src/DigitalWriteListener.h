@@ -14,6 +14,6 @@ typedef struct DigitalWriteListener {
   Byte pin;
 } DigitalWriteListener;
 
-DigitalWriteListener *digital_write_listener_create(Byte pin);
+ByteListener *digital_write_listener_create(Byte pin);
 
 #endif //GYRUS_ARDUINO_UNO_DIGITALWRITELISTENER_H

@@ -15,10 +15,10 @@ static void _digital_write_complete (ByteListener *self) {
   // ignore
 }
 
-DigitalWriteListener *digital_write_listener_create (Byte pin) {
+ByteListener *digital_write_listener_create (Byte pin) {
   DigitalWriteListener *listener = xmalloc (sizeof (DigitalWriteListener));
   byte_listener_initialize ((ByteListener *) listener, _digital_write_next, _digital_write_error,
                             _digital_write_complete);
   listener->pin = pin;
-  return listener;
+  return (ByteListener *) listener;
 }
