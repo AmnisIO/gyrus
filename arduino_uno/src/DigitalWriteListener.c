@@ -4,7 +4,10 @@
 
 static void _digital_write_next (ByteListener *self, Byte value) {
   DigitalWriteListener *listener = (DigitalWriteListener *) self;
-  pinMode (listener->pin, OUTPUT);
+  if(listener->_started == false) {
+    pinMode (listener->pin, OUTPUT);
+    listener->_started = true;
+  }
   digitalWrite (listener->pin, value);
 }
 
@@ -21,5 +24,6 @@ ByteListener *digital_write_listener_create (Byte pin) {
   byte_listener_initialize ((ByteListener *) listener, _digital_write_next, _digital_write_error,
                             _digital_write_complete);
   listener->pin = pin;
+  listener->_started = ;
   return (ByteListener *) listener;
 }

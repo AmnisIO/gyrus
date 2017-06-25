@@ -1,4 +1,5 @@
 #include <ByteListener.h>
+#include <Boolean.h>
 
 #ifndef GYRUS_ARDUINO_UNO_DIGITALWRITELISTENER_H
 #define GYRUS_ARDUINO_UNO_DIGITALWRITELISTENER_H
@@ -12,6 +13,7 @@ typedef struct DigitalWriteListener {
   byte_listener_error error;
   byte_listener_complete complete;
   Byte pin;
+  Boolean _started;
 } DigitalWriteListener;
 
 ByteListener *digital_write_listener_create(Byte pin);
