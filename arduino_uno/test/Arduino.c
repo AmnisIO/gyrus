@@ -11,7 +11,9 @@ unsigned long millis () {
 }
 
 int digitalRead (Byte pin) {
-  return (Byte) (milliseconds % 2);
+  Byte value = (Byte) (milliseconds % 2);
+  printf("read %d from pin %d\n", value, pin);
+  return value;
 }
 
 void digitalWrite (Byte pin, Byte value) {
