@@ -7,6 +7,8 @@ Byte INPUT = 0;
 Byte OUTPUT = 1;
 Boolean true = 1;
 Boolean false = 0;
+Byte HIGH = 1;
+Byte LOW = 0;
 
 unsigned long millis () {
   return milliseconds++;
