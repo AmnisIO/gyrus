@@ -6,6 +6,7 @@
 static void _pin_read (void *self) {
   DigitalReadProducer *producer = self;
   byte_listener_internal_next next = byte_listener_internal_next_get (producer->_listener);
+  pinMode (producer->_pin, INPUT);
   Byte value = (Byte) digitalRead (producer->_pin);
   next (producer->_listener, value);
 }
