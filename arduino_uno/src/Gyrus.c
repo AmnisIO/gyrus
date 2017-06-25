@@ -16,7 +16,6 @@ static const Byte D10 = 10;
 static const Byte D11 = 11;
 static const Byte D12 = 12;
 static const Byte D13 = 13;
-static const Byte LED = 13;
 static const Byte TRUE = 1;
 
 void gyrus_run (gyrus_application application) {
@@ -36,8 +35,9 @@ void gyrus_run (gyrus_application application) {
   sinks->D10->add_listener (sinks->D10, digital_write_listener_create (D10));
   sinks->D11->add_listener (sinks->D11, digital_write_listener_create (D11));
   sinks->D12->add_listener (sinks->D12, digital_write_listener_create (D12));
-  sinks->D13->add_listener (sinks->D13, digital_write_listener_create (D13));
-  sinks->LED->add_listener (sinks->LED, digital_write_listener_create (LED));
+  ByteListener *digital_write_listener_D13 = digital_write_listener_create (D13);
+  sinks->D13->add_listener (sinks->D13, digital_write_listener_D13);
+  sinks->LED->add_listener (sinks->LED, digital_write_listener_D13);
   // TODO: Change to timer interrupts
   while (TRUE) {
     rivulet_timer->tick ();
