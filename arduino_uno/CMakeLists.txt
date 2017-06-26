@@ -7,7 +7,8 @@ set(RIVULET_SRC ../../rivulet)
 
 include_directories(
         ${RIVULET_SRC}/src
-        src)
+        src
+        lib)
 
 file(GLOB src src/*.c)
 file(GLOB test test/*.c)

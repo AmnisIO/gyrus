@@ -1,6 +1,4 @@
 #include <Arduino.h>
-#include <Sources.h>
-#include <Sinks.h>
 #include <Gyrus.h>
 
 Byte toggle (Byte value) {
