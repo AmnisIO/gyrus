@@ -1,34 +1,34 @@
-#include <ByteStream.h>
+#include <RivuletStream.h>
 #include "RivuletTimer.h"
-#include "Arduino.h"
+#include <Arduino.h>
 #include "DigitalReadProducer.h"
 
 static void _pin_read (void *self) {
   DigitalReadProducer *producer = self;
-  byte_listener_internal_next next = byte_listener_internal_next_get (producer->_listener);
-  Byte value = (Byte) digitalRead (producer->_pin);
+  rivulet_listener_internal_next next = rivulet_listener_internal_next_get (producer->_listener);
+  int value = digitalRead (producer->_pin);
   next (producer->_listener, value);
 }
 
-static void _pin_read_start (ByteProducer *self, ByteListenerInternal *listener) {
+static void _pin_read_start (RivuletProducer *self, RivuletListenerInternal *listener) {
   DigitalReadProducer *producer = (DigitalReadProducer *) self;
   producer->_listener = listener;
   producer->_task_id = rivulet_timer->set_interval (_pin_read, producer, 1);
   pinMode (producer->_pin, INPUT);
 }
 
-static void _pin_read_stop (ByteProducer *self) {
+static void _pin_read_stop (RivuletProducer *self) {
   DigitalReadProducer *producer = (DigitalReadProducer *) self;
   rivulet_timer->clear_task (producer->_task_id);
 }
 
-DigitalReadProducer *digital_read_producer_create (Byte pin) {
+DigitalReadProducer *digital_read_producer_create (int pin) {
   DigitalReadProducer *producer = xmalloc (sizeof (DigitalReadProducer));
-  byte_producer_initialize ((ByteProducer *) producer, _pin_read_start, _pin_read_stop);
+  rivulet_producer_initialize ((RivuletProducer *) producer, _pin_read_start, _pin_read_stop);
   producer->_pin = pin;
   return producer;
 }
 
-ByteStream *digital_read_stream_create (Byte pin) {
-  return byte_stream_create ((ByteProducer *) digital_read_producer_create (pin));
+RivuletStream *digital_read_stream_create (int pin) {
+  return rivulet_stream_create ((RivuletProducer *) digital_read_producer_create (pin));
 }

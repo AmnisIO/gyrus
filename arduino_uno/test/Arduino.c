@@ -1,29 +1,30 @@
 #include <printf.h>
+#include <RivuletTask.h>
 #include "Arduino.h"
 
 unsigned long milliseconds = 0UL;
 
-Byte INPUT = 0;
-Byte OUTPUT = 1;
+Boolean INPUT = 0;
+Boolean OUTPUT = 1;
 Boolean true = 1;
 Boolean false = 0;
-Byte HIGH = 1;
-Byte LOW = 0;
+Boolean HIGH = 1;
+Boolean LOW = 0;
 
 unsigned long millis () {
   return milliseconds++;
 }
 
-int digitalRead (Byte pin) {
-  Byte value = (Byte) (milliseconds % 2);
+int digitalRead (int pin) {
+  int value = (int) (milliseconds % 2);
   printf("read %d from pin %d\n", value, pin);
   return value;
 }
 
-void digitalWrite (Byte pin, Byte value) {
+void digitalWrite (int pin, int value) {
   printf ("wrote %d to pin %d\n", value, pin);
 }
 
-void pinMode(Byte pin, Byte mode) {
+void pinMode(int pin, Boolean mode) {
   printf("pin mode of %d pin set to %d\n", pin, mode);
 }

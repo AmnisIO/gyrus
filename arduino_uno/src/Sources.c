@@ -1,19 +1,19 @@
 #include "Sources.h"
 #include "DigitalReadProducer.h"
 
-static const Byte D1 = 1;
-static const Byte D2 = 2;
-static const Byte D3 = 3;
-static const Byte D4 = 4;
-static const Byte D5 = 5;
-static const Byte D6 = 6;
-static const Byte D7 = 7;
-static const Byte D8 = 8;
-static const Byte D9 = 9;
-static const Byte D10 = 10;
-static const Byte D11 = 11;
-static const Byte D12 = 12;
-static const Byte D13 = 13;
+static const int D1 = 1;
+static const int D2 = 2;
+static const int D3 = 3;
+static const int D4 = 4;
+static const int D5 = 5;
+static const int D6 = 6;
+static const int D7 = 7;
+static const int D8 = 8;
+static const int D9 = 9;
+static const int D10 = 10;
+static const int D11 = 11;
+static const int D12 = 12;
+static const int D13 = 13;
 
 Sources *sources_create () {
   Sources *sources = xmalloc (sizeof (Sources));

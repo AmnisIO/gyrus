@@ -1,21 +1,22 @@
-#include <ByteListener.h>
+#include <RivuletListener.h>
 #include <Boolean.h>
+#include <Arduino.h>
 
 #ifndef GYRUS_ARDUINO_UNO_DIGITALWRITELISTENER_H
 #define GYRUS_ARDUINO_UNO_DIGITALWRITELISTENER_H
 
 typedef struct DigitalWriteListener {
-  ByteObservableType type;
-  byte_listener_internal_next _next;
-  byte_listener_internal_error _error;
-  byte_listener_internal_complete _complete;
-  byte_listener_next next;
-  byte_listener_error error;
-  byte_listener_complete complete;
-  Byte pin;
+  RivuletObservableType type;
+  rivulet_listener_internal_next _next;
+  rivulet_listener_internal_error _error;
+  rivulet_listener_internal_complete _complete;
+  rivulet_listener_next next;
+  rivulet_listener_error error;
+  rivulet_listener_complete complete;
+  int pin;
   Boolean _started;
 } DigitalWriteListener;
 
-ByteListener *digital_write_listener_create(Byte pin);
+RivuletListener *digital_write_listener_create(int pin);
 
 #endif //GYRUS_ARDUINO_UNO_DIGITALWRITELISTENER_H
