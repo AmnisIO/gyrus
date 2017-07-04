@@ -1,23 +1,23 @@
 #ifndef GYRUS_ARDUINO_UNO_ARDUINOUNOSINKS_H
 #define GYRUS_ARDUINO_UNO_ARDUINOUNOSINKS_H
 
-#include <ByteStream.h>
+#include <RivuletStream.h>
 
 typedef struct Sinks {
-  ByteStream *D1;
-  ByteStream *D2;
-  ByteStream *D3;
-  ByteStream *D4;
-  ByteStream *D5;
-  ByteStream *D6;
-  ByteStream *D7;
-  ByteStream *D8;
-  ByteStream *D9;
-  ByteStream *D10;
-  ByteStream *D11;
-  ByteStream *D12;
-  ByteStream *D13;
-  ByteStream *LED;
+  RivuletStream *D1;
+  RivuletStream *D2;
+  RivuletStream *D3;
+  RivuletStream *D4;
+  RivuletStream *D5;
+  RivuletStream *D6;
+  RivuletStream *D7;
+  RivuletStream *D8;
+  RivuletStream *D9;
+  RivuletStream *D10;
+  RivuletStream *D11;
+  RivuletStream *D12;
+  RivuletStream *D13;
+  RivuletStream *LED;
 } Sinks;
 
 Sinks *sinks_create ();

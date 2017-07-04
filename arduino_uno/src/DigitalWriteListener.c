@@ -1,10 +1,9 @@
-#include <ByteListernerManager.h>
+#include <RivuletListernerManager.h>
 #include "DigitalWriteListener.h"
-#include "Arduino.h"
 
-static void _next (ByteListener *self, Byte value) {
+static void _next (RivuletListener *self, int value) {
   DigitalWriteListener *listener = (DigitalWriteListener *) self;
-  Byte output = value == LOW ? LOW : HIGH;
+  int output = value == LOW ? LOW : HIGH;
   if (listener->_started) return digitalWrite (listener->pin, output);
   digitalWrite (listener->pin, LOW);
   pinMode (listener->pin, OUTPUT);
@@ -12,18 +11,18 @@ static void _next (ByteListener *self, Byte value) {
   digitalWrite (listener->pin, output);
 }
 
-static void _error (ByteListener *self, int e) {
+static void _error (RivuletListener *self, int e) {
   // ignore
 }
 
-static void _complete (ByteListener *self) {
+static void _complete (RivuletListener *self) {
   // ignore
 }
 
-ByteListener *digital_write_listener_create (Byte pin) {
+RivuletListener *digital_write_listener_create (int pin) {
   DigitalWriteListener *listener = xmalloc (sizeof (DigitalWriteListener));
-  byte_listener_initialize ((ByteListener *) listener, _next, _error, _complete);
+  rivulet_listener_initialize ((RivuletListener *) listener, _next, _error, _complete);
   listener->pin = pin;
   listener->_started = false;
-  return (ByteListener *) listener;
+  return (RivuletListener *) listener;
 }

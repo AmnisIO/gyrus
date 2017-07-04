@@ -1,18 +1,17 @@
 #ifndef GYRUS_ARDUINO_UNO_ARDUINO_H
 #define GYRUS_ARDUINO_UNO_ARDUINO_H
 
-#include "Byte.h"
 #include "Boolean.h"
 
 unsigned long millis();
-int digitalRead(Byte pin);
-void digitalWrite(Byte pin, Byte value);
-void pinMode(Byte pin, Byte mode);
-extern Byte INPUT;
-extern Byte OUTPUT;
+int digitalRead(int pin);
+void digitalWrite(int pin, int value);
+void pinMode(int pin, Boolean mode);
+extern Boolean INPUT;
+extern Boolean OUTPUT;
 extern Boolean true;
 extern Boolean false;
-extern Byte HIGH;
-extern Byte LOW;
+extern Boolean HIGH;
+extern Boolean LOW;
 
 #endif //GYRUS_ARDUINO_UNO_ARDUINO_H
