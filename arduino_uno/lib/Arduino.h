@@ -5,7 +5,9 @@
 
 unsigned long millis();
 int digitalRead(int pin);
+int analogRead(int pin);
 void digitalWrite(int pin, int value);
+void analogWrite(int pin, int value);
 void pinMode(int pin, Boolean mode);
 extern Boolean INPUT;
 extern Boolean OUTPUT;
