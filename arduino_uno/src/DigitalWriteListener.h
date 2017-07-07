@@ -1,9 +1,9 @@
+#ifndef GYRUS_ARDUINO_UNO_DIGITALWRITELISTENER_H
+#define GYRUS_ARDUINO_UNO_DIGITALWRITELISTENER_H
+
 #include <RivuletListener.h>
 #include <Boolean.h>
 #include <Arduino.h>
-
-#ifndef GYRUS_ARDUINO_UNO_DIGITALWRITELISTENER_H
-#define GYRUS_ARDUINO_UNO_DIGITALWRITELISTENER_H
 
 typedef struct DigitalWriteListener {
   RivuletObservableType type;
