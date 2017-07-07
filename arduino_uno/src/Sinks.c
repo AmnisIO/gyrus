@@ -4,6 +4,7 @@ Sinks *sinks_create () {
   Sinks *sinks = xmalloc (sizeof (Sinks));
   // TODO: Investigate
   // byte_stream_empty() and byte_stream_never() do not work, only NULL does
+  sinks->D0 = NULL;
   sinks->D1 = NULL;
   sinks->D2 = NULL;
   sinks->D3 = NULL;

@@ -1,5 +1,7 @@
+#include <Arduino.h>
 #include "Sources.h"
 #include "DigitalReadProducer.h"
+#include "AnalogReadProducer.h"
 
 static const int D1 = 1;
 static const int D2 = 2;
@@ -31,5 +33,11 @@ Sources *sources_create () {
   sources->D12 = digital_read_stream_create (D12);
   sources->D13 = digital_read_stream_create (D13);
   sources->LED = sources->D13;
+  sources->A0 = analog_read_stream_create (A0);
+  sources->A1 = analog_read_stream_create (A1);
+  sources->A2 = analog_read_stream_create (A2);
+  sources->A3 = analog_read_stream_create (A3);
+  sources->A4 = analog_read_stream_create (A4);
+  sources->A5 = analog_read_stream_create (A5);
   return sources;
 }

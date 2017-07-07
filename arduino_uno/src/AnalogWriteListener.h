@@ -1,10 +1,11 @@
-#ifndef GYRUS_ARDUINO_UNO_DIGITALWRITELISTENER_H
-#define GYRUS_ARDUINO_UNO_DIGITALWRITELISTENER_H
+#ifndef GYRUS_ARDUINO_UNO_ANALOGWRITELISTENER_H
+#define GYRUS_ARDUINO_UNO_ANALOGWRITELISTENER_H
 
 #include <RivuletListener.h>
 #include <Boolean.h>
+#include <Arduino.h>
 
-typedef struct DigitalWriteListener {
+typedef struct AnalogWriteListener {
   RivuletObservableType type;
   rivulet_listener_internal_next _next;
   rivulet_listener_internal_error _error;
@@ -14,8 +15,8 @@ typedef struct DigitalWriteListener {
   rivulet_listener_complete complete;
   int pin;
   Boolean _started;
-} DigitalWriteListener;
+} AnalogWriteListener;
 
-RivuletListener *digital_write_listener_create(int pin);
+RivuletListener *analog_write_listener_create(int pin);
 
-#endif //GYRUS_ARDUINO_UNO_DIGITALWRITELISTENER_H
+#endif //GYRUS_ARDUINO_UNO_ANALOGWRITELISTENER_H
