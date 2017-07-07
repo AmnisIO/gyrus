@@ -1,9 +1,11 @@
 #include <RivuletListernerManager.h>
+#include <Arduino.h>
 #include "DigitalWriteListener.h"
+#include "SignalLevels.h"
 
 static void _next (RivuletListener *self, int value) {
   DigitalWriteListener *listener = (DigitalWriteListener *) self;
-  int output = value == LOW ? LOW : HIGH;
+  int output = value == GYRUS_LOW ? LOW : HIGH;
   if (listener->_started) return digitalWrite (listener->pin, output);
   digitalWrite (listener->pin, LOW);
   pinMode (listener->pin, OUTPUT);
