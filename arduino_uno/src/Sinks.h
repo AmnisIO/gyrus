@@ -4,6 +4,7 @@
 #include <RivuletStream.h>
 
 typedef struct Sinks {
+  RivuletStream *D0;
   RivuletStream *D1;
   RivuletStream *D2;
   RivuletStream *D3;
