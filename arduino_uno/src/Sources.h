@@ -18,6 +18,12 @@ typedef struct Sources {
   RivuletStream *D12;
   RivuletStream *D13;
   RivuletStream *LED;
+  RivuletStream *A0;
+  RivuletStream *A1;
+  RivuletStream *A2;
+  RivuletStream *A3;
+  RivuletStream *A4;
+  RivuletStream *A5;
 } Sources;
 
 Sources *sources_create ();
