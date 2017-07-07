@@ -1,9 +1,9 @@
 #include <RivuletTimer.h>
-#include <Arduino.h>
 #include "Gyrus.h"
 #include "DigitalWriteListener.h"
 #include "AnalogWriteListener.h"
 
+static const int D0 = 0;
 static const int D1 = 1;
 static const int D2 = 2;
 static const int D3 = 3;
@@ -25,6 +25,7 @@ void gyrus_run (gyrus_application application) {
   rivulet_timer_initialize (millis);
   // TODO: Investigate
   // int_stream_empty() and int_stream_never() do not work, only NULL does
+  if (sinks->D0 != NULL) sinks->D0->add_listener (sinks->D0, digital_write_listener_create (D0));
   if (sinks->D1 != NULL) sinks->D1->add_listener (sinks->D1, digital_write_listener_create (D1));
   if (sinks->D2 != NULL) sinks->D2->add_listener (sinks->D2, digital_write_listener_create (D2));
   if (sinks->D3 != NULL) sinks->D3->add_listener (sinks->D3, analog_write_listener_create (D3));
