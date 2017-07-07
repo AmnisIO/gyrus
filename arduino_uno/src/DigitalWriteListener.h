@@ -3,7 +3,6 @@
 
 #include <RivuletListener.h>
 #include <Boolean.h>
-#include <Arduino.h>
 
 typedef struct DigitalWriteListener {
   RivuletObservableType type;
