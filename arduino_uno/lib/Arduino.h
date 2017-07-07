@@ -16,4 +16,11 @@ extern Boolean false;
 extern Boolean HIGH;
 extern Boolean LOW;
 
+extern int A0;
+extern int A1;
+extern int A2;
+extern int A3;
+extern int A4;
+extern int A5;
+
 #endif //GYRUS_ARDUINO_UNO_ARDUINO_H
