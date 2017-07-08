@@ -3,6 +3,7 @@
 
 #include "Sources.h"
 #include "Sinks.h"
+#include "SignalLevels.h"
 
 typedef Sinks *(*gyrus_application) (Sources *sources);
 
