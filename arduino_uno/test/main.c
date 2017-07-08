@@ -1,18 +1,24 @@
 #include <Arduino.h>
 #include <Gyrus.h>
 
-int toggle (int value) {
-  return value == HIGH ? LOW : HIGH;
+
+int brightness = 0;
+
+int change = 5;
+
+int getCurrentBrightness(int event) {
+  brightness = brightness + change;
+  if (brightness <= GYRUS_LOW || brightness >= GYRUS_HIGH) change = -change;
+  return brightness;
 }
 
-Sinks *blink (Sources *arduino) {
-  Sinks *sinks = sinks_create ();
-  RivuletStream *every_second = rivulet_stream_periodic (1);
-  RivuletStream* sampled_switch = every_second->sample(every_second, arduino->D2);
-  sinks->LED = sampled_switch->map (sampled_switch, toggle);
+Sinks* application(Sources* arduino) {
+  Sinks* sinks = sinks_create();
+  RivuletStream* _typewriter_intermediary_1 = rivulet_stream_periodic(30);
+  sinks->D10 = _typewriter_intermediary_1->map(_typewriter_intermediary_1, getCurrentBrightness);
   return sinks;
 }
 
 int main () {
-  gyrus_run (blink);
+  gyrus_run (application);
 }
