@@ -3,20 +3,20 @@
 #include "DigitalWriteListener.h"
 #include "AnalogWriteListener.h"
 
-static const int D0 = 0;
-static const int D1 = 1;
-static const int D2 = 2;
-static const int D3 = 3;
-static const int D4 = 4;
-static const int D5 = 5;
-static const int D6 = 6;
-static const int D7 = 7;
-static const int D8 = 8;
-static const int D9 = 9;
-static const int D10 = 10;
-static const int D11 = 11;
-static const int D12 = 12;
-static const int D13 = 13;
+static const Pin D0 = 0;
+static const Pin D1 = 1;
+static const Pin D2 = 2;
+static const Pin D3 = 3;
+static const Pin D4 = 4;
+static const Pin D5 = 5;
+static const Pin D6 = 6;
+static const Pin D7 = 7;
+static const Pin D8 = 8;
+static const Pin D9 = 9;
+static const Pin D10 = 10;
+static const Pin D11 = 11;
+static const Pin D12 = 12;
+static const Pin D13 = 13;
 
 void gyrus_run (gyrus_application application) {
   Sources *sources = sources_create ();

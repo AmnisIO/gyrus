@@ -24,13 +24,13 @@ static void _pin_read_stop (RivuletProducer *self) {
   rivulet_timer->clear_task (producer->_task_id);
 }
 
-DigitalReadProducer *digital_read_producer_create (int pin) {
+DigitalReadProducer *digital_read_producer_create (Pin pin) {
   DigitalReadProducer *producer = xmalloc (sizeof (DigitalReadProducer));
   rivulet_producer_initialize ((RivuletProducer *) producer, _pin_read_start, _pin_read_stop);
   producer->_pin = pin;
   return producer;
 }
 
-RivuletStream *digital_read_stream_create (int pin) {
+RivuletStream *digital_read_stream_create (Pin pin) {
   return rivulet_stream_create ((RivuletProducer *) digital_read_producer_create (pin));
 }

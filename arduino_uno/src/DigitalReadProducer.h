@@ -3,6 +3,7 @@
 
 #include "RivuletProducer.h"
 #include "RivuletTask.h"
+#include "Pin.h"
 
 typedef struct DigitalReadProducer {
   RivuletObservableType type;
@@ -10,12 +11,12 @@ typedef struct DigitalReadProducer {
   rivulet_producer_internal_stop _stop;
   rivulet_producer_start start;
   rivulet_producer_stop stop;
-  int _pin;
+  Pin _pin;
   RivuletListenerInternal *_listener;
   RivuletTaskIdentifier _task_id;
 } DigitalReadProducer;
 
-DigitalReadProducer *digital_read_producer_create (int pin);
-RivuletStream *digital_read_stream_create (int pin);
+DigitalReadProducer *digital_read_producer_create (Pin pin);
+RivuletStream *digital_read_stream_create (Pin pin);
 
 #endif //GYRUS_ARDUINO_UNO_DIGITALREADPRODUCER_H

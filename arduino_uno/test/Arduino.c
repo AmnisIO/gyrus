@@ -11,37 +11,37 @@ Boolean false = 0;
 Boolean HIGH = 1;
 Boolean LOW = 0;
 
-int A0 = 14;
-int A1 = 15;
-int A2 = 16;
-int A3 = 17;
-int A4 = 18;
-int A5 = 19;
+Pin A0 = 14;
+Pin A1 = 15;
+Pin A2 = 16;
+Pin A3 = 17;
+Pin A4 = 18;
+Pin A5 = 19;
 
 unsigned long millis () {
   return milliseconds++;
 }
 
-int digitalRead (int pin) {
+int digitalRead (Pin pin) {
   int value = (int) (milliseconds % 2);
   printf("read %d from pin %d\n", value, pin);
   return value;
 }
 
-void digitalWrite (int pin, int value) {
+void digitalWrite (Pin pin, int value) {
   printf ("wrote %d to pin %d\n", value, pin);
 }
 
-int analogRead (int pin) {
+int analogRead (Pin pin) {
   int value = (int) (milliseconds % 2);
   printf("read %d from pin %d\n", value, pin);
   return value;
 }
 
-void analogWrite (int pin, int value) {
+void analogWrite (Pin pin, int value) {
   printf ("wrote %d to pin %d\n", value, pin);
 }
 
-void pinMode(int pin, Boolean mode) {
+void pinMode(Pin pin, Boolean mode) {
   printf("pin mode of %d pin set to %d\n", pin, mode);
 }

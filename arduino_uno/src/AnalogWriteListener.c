@@ -22,7 +22,7 @@ static void _complete (RivuletListener *self) {
   // ignore
 }
 
-RivuletListener *analog_write_listener_create (int pin) {
+RivuletListener *analog_write_listener_create (Pin pin) {
   AnalogWriteListener *listener = xmalloc (sizeof (AnalogWriteListener));
   rivulet_listener_initialize ((RivuletListener *) listener, _next, _error, _complete);
   listener->pin = pin;

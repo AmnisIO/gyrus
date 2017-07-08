@@ -21,7 +21,7 @@ static void _complete (RivuletListener *self) {
   // ignore
 }
 
-RivuletListener *digital_write_listener_create (int pin) {
+RivuletListener *digital_write_listener_create (Pin pin) {
   DigitalWriteListener *listener = xmalloc (sizeof (DigitalWriteListener));
   rivulet_listener_initialize ((RivuletListener *) listener, _next, _error, _complete);
   listener->pin = pin;

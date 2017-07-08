@@ -4,6 +4,7 @@
 #include <RivuletListener.h>
 #include <Boolean.h>
 #include <Arduino.h>
+#include "Pin.h"
 
 typedef struct AnalogWriteListener {
   RivuletObservableType type;
@@ -13,10 +14,10 @@ typedef struct AnalogWriteListener {
   rivulet_listener_next next;
   rivulet_listener_error error;
   rivulet_listener_complete complete;
-  int pin;
+  Pin pin;
   Boolean _started;
 } AnalogWriteListener;
 
-RivuletListener *analog_write_listener_create(int pin);
+RivuletListener *analog_write_listener_create(Pin pin);
 
 #endif //GYRUS_ARDUINO_UNO_ANALOGWRITELISTENER_H
