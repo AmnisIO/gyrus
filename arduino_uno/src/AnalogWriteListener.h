@@ -8,10 +8,8 @@
 typedef struct AnalogWriteListener {
   RivuletObservableType type;
   rivulet_listener_internal_next _next;
-  rivulet_listener_internal_error _error;
   rivulet_listener_internal_complete _complete;
   rivulet_listener_next next;
-  rivulet_listener_error error;
   rivulet_listener_complete complete;
   Pin pin;
   Boolean _started;

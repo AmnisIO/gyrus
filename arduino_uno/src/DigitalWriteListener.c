@@ -12,17 +12,13 @@ static void _next (RivuletListener *self, int value) {
   digitalWrite (listener->pin, output);
 }
 
-static void _error (RivuletListener *self, int e) {
-  // ignore
-}
-
 static void _complete (RivuletListener *self) {
   // ignore
 }
 
 RivuletListener *digital_write_listener_create (Pin pin) {
   DigitalWriteListener *listener = xmalloc (sizeof (DigitalWriteListener));
-  rivulet_listener_initialize ((RivuletListener *) listener, _next, _error, _complete);
+  rivulet_listener_initialize ((RivuletListener *) listener, _next, _complete);
   listener->pin = pin;
   listener->_started = GYRUS_FALSE;
   return (RivuletListener *) listener;
