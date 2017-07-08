@@ -4,7 +4,7 @@
 
 static void _next (RivuletListener *self, int value) {
   DigitalWriteListener *listener = (DigitalWriteListener *) self;
-  SignalLevel output = value == GYRUS_SIGNAL_LEVEL_LOW ? LOW : HIGH;
+  SignalLevel output = (SignalLevel) (value == GYRUS_SIGNAL_LEVEL_LOW ? LOW : HIGH);
   if (listener->_started) return digitalWrite (listener->pin, output);
   digitalWrite (listener->pin, LOW);
   pinMode (listener->pin, GYRUS_PIN_MODE_OUTPUT);
