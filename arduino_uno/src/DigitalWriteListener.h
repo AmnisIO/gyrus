@@ -3,7 +3,7 @@
 
 #include <RivuletListener.h>
 #include <Boolean.h>
-#include "Pin.h"
+#include "GyrusUtils.h"
 
 typedef struct DigitalWriteListener {
   RivuletObservableType type;

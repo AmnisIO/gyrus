@@ -14,7 +14,7 @@ static void _pin_read_start (RivuletProducer *self, RivuletListenerInternal *lis
   AnalogReadProducer *producer = (AnalogReadProducer *) self;
   producer->_listener = listener;
   producer->_task_id = rivulet_timer->set_interval (_pin_read, producer, 1);
-  pinMode (producer->_pin, INPUT);
+  pinMode (producer->_pin, GYRUS_PIN_MODE_INPUT);
 }
 
 static void _pin_read_stop (RivuletProducer *self) {

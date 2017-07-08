@@ -3,7 +3,7 @@
 
 #include <RivuletStream.h>
 #include <RivuletTask.h>
-#include "Pin.h"
+#include "GyrusUtils.h"
 
 typedef struct AnalogReadProducer {
   RivuletObservableType type;
