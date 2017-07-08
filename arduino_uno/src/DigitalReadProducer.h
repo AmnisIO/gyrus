@@ -3,7 +3,7 @@
 
 #include "RivuletProducer.h"
 #include "RivuletTask.h"
-#include "Pin.h"
+#include "GyrusUtils.h"
 
 typedef struct DigitalReadProducer {
   RivuletObservableType type;
