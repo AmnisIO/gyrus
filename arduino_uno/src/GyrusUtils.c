@@ -1,4 +1,5 @@
 #include "GyrusUtils.h"
+#include <Arduino.h>
 
 const Pin GYRUS_PIN_D0 = 0;
 const Pin GYRUS_PIN_D1 = 1;
@@ -24,8 +25,8 @@ const Pin GYRUS_PIN_A5 = 19;
 const Pin GYRUS_PIN_A6 = 20;
 const Pin GYRUS_PIN_A7 = 21;
 
-const PinMode GYRUS_PIN_MODE_INPUT = 0;
-const PinMode GYRUS_PIN_MODE_OUTPUT = 1;
+const PinMode GYRUS_PIN_MODE_INPUT = INPUT;
+const PinMode GYRUS_PIN_MODE_OUTPUT = OUTPUT;
 
 const SignalLevel GYRUS_SIGNAL_LEVEL_LOW = 0;
 const SignalLevel GYRUS_SIGNAL_LEVEL_HIGH = 255;
