@@ -2,12 +2,14 @@
 #include "RivuletTimer.h"
 #include <Arduino.h>
 #include "DigitalReadProducer.h"
+#include "SignalLevels.h"
 
 static void _pin_read (void *self) {
   DigitalReadProducer *producer = self;
   rivulet_listener_internal_next next = rivulet_listener_internal_next_get (producer->_listener);
   int value = digitalRead (producer->_pin);
-  next (producer->_listener, value);
+  int input = value == GYRUS_LOW ? GYRUS_LOW: GYRUS_HIGH;
+  next (producer->_listener, input);
 }
 
 static void _pin_read_start (RivuletProducer *self, RivuletListenerInternal *listener) {
