@@ -4,21 +4,21 @@ Sinks *sinks_create () {
   Sinks *sinks = xmalloc (sizeof (Sinks));
   // TODO: Investigate
   // byte_stream_empty() and byte_stream_never() do not work, only NULL does
-  sinks->D0 = NULL;
-  sinks->D1 = NULL;
-  sinks->D2 = NULL;
-  sinks->D3 = NULL;
-  sinks->D4 = NULL;
-  sinks->D5 = NULL;
-  sinks->D6 = NULL;
-  sinks->D7 = NULL;
-  sinks->D8 = NULL;
-  sinks->D9 = NULL;
-  sinks->D10 = NULL;
-  sinks->D11 = NULL;
-  sinks->D12 = NULL;
-  sinks->D13 = NULL;
-  sinks->LED = NULL;
+  sinks->D0 = rivulet_stream_never ();
+  sinks->D1 = rivulet_stream_never ();
+  sinks->D2 = rivulet_stream_never ();
+  sinks->D3 = rivulet_stream_never ();
+  sinks->D4 = rivulet_stream_never ();
+  sinks->D5 = rivulet_stream_never ();
+  sinks->D6 = rivulet_stream_never ();
+  sinks->D7 = rivulet_stream_never ();
+  sinks->D8 = rivulet_stream_never ();
+  sinks->D9 = rivulet_stream_never ();
+  sinks->D10 = rivulet_stream_never ();
+  sinks->D11 = rivulet_stream_never ();
+  sinks->D12 = rivulet_stream_never ();
+  sinks->D13 = rivulet_stream_never ();
+  sinks->LED = rivulet_stream_never ();
   return sinks;
 }
 
