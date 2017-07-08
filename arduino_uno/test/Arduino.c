@@ -5,9 +5,6 @@
 
 unsigned long milliseconds = 0UL;
 
-Boolean HIGH = 1;
-Boolean LOW = 0;
-
 unsigned long millis () {
   return milliseconds++;
 }
