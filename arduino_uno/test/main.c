@@ -18,7 +18,7 @@ int toggle(int value) {
 
 Sinks* application(Sources* arduino) {
   Sinks* sinks = sinks_create();
-  RivuletStream* _typewriter_intermediary_1 = rivulet_stream_periodic(30);
+  RivuletStream* _typewriter_intermediary_1 = rivulet_stream_periodic(3);
   RivuletStream* _typewriter_intermediary_2 = rivulet_stream_periodic(1);
   sinks->D10 = _typewriter_intermediary_1->map(_typewriter_intermediary_1, getCurrentBrightness);
   RivuletStream* _sampled = _typewriter_intermediary_2->sample(_typewriter_intermediary_2, arduino->LED);
