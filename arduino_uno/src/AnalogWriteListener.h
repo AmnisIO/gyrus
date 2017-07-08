@@ -3,7 +3,6 @@
 
 #include <RivuletListener.h>
 #include <Boolean.h>
-#include <Arduino.h>
 #include "GyrusUtils.h"
 
 typedef struct AnalogWriteListener {

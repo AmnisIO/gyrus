@@ -1,5 +1,6 @@
 #include <RivuletListernerManager.h>
 #include "AnalogWriteListener.h"
+#include <Arduino.h>
 
 static void _next (RivuletListener *self, int value) {
   AnalogWriteListener *listener = (AnalogWriteListener *) self;
