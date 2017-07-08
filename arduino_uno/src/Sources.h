@@ -4,6 +4,7 @@
 #include <RivuletStream.h>
 
 typedef struct Sources {
+  RivuletStream *D0;
   RivuletStream *D1;
   RivuletStream *D2;
   RivuletStream *D3;
@@ -24,6 +25,8 @@ typedef struct Sources {
   RivuletStream *A3;
   RivuletStream *A4;
   RivuletStream *A5;
+  RivuletStream *A6;
+  RivuletStream *A7;
 } Sources;
 
 Sources *sources_create ();
