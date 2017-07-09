@@ -1,6 +1,7 @@
-#include <RivuletListernerManager.h>
 #include "AnalogWriteListener.h"
 #include <Arduino.h>
+#include <RivuletUtils.h>
+#include <RivuletListenerRegistry.h>
 
 static void _next (RivuletListener *self, int value) {
   AnalogWriteListener *listener = (AnalogWriteListener *) self;
@@ -18,9 +19,21 @@ static void _complete (RivuletListener *self) {
   // ignore
 }
 
+static Boolean _registered = 0;
+static RivuletListenerType _listener_type = 0;
+static RivuletProducerType _producer_type = 0;
+
+static void _register () {
+  if (_registered) return;
+  _listener_type = rivulet_listener_registry_register (_next, _complete);
+  _registered = 1;
+}
+
 RivuletListener *analog_write_listener_create (Pin pin) {
   AnalogWriteListener *listener = xmalloc (sizeof (AnalogWriteListener));
-  rivulet_listener_initialize ((RivuletListener *) listener, _next, _complete);
+  _register ();
+  listener->listener_type = _listener_type;
+  listener->producer_type = _producer_type;
   listener->pin = pin;
   listener->_started = GYRUS_FALSE;
   return (RivuletListener *) listener;

@@ -6,13 +6,10 @@
 #include "GyrusUtils.h"
 
 typedef struct DigitalReadProducer {
-  RivuletObservableType type;
-  rivulet_producer_internal_start _start;
-  rivulet_producer_internal_stop _stop;
-  rivulet_producer_start start;
-  rivulet_producer_stop stop;
+  RivuletListenerType listener_type;
+  RivuletProducerType producer_type;
   Pin _pin;
-  RivuletListenerInternal *_listener;
+  RivuletListener *_listener;
   RivuletTaskIdentifier _task_id;
 } DigitalReadProducer;
 

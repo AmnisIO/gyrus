@@ -5,8 +5,8 @@
 
 Sources *sources_create () {
   Sources *sources = xmalloc (sizeof (Sources));
-//  sources->D0 = digital_read_stream_create (GYRUS_PIN_D0);
-//  sources->D1 = digital_read_stream_create (GYRUS_PIN_D1);
+  sources->D0 = digital_read_stream_create (GYRUS_PIN_D0);
+  sources->D1 = digital_read_stream_create (GYRUS_PIN_D1);
   sources->D2 = digital_read_stream_create (GYRUS_PIN_D2);
   sources->D3 = digital_read_stream_create (GYRUS_PIN_D3);
   sources->D4 = digital_read_stream_create (GYRUS_PIN_D4);
@@ -20,13 +20,13 @@ Sources *sources_create () {
   sources->D12 = digital_read_stream_create (GYRUS_PIN_D12);
   sources->D13 = digital_read_stream_create (GYRUS_PIN_D13);
   sources->LED = sources->D13;
-//  sources->A0 = analog_read_stream_create (GYRUS_PIN_A0);
-//  sources->A1 = analog_read_stream_create (GYRUS_PIN_A1);
-//  sources->A2 = analog_read_stream_create (GYRUS_PIN_A2);
-//  sources->A3 = analog_read_stream_create (GYRUS_PIN_A3);
-//  sources->A4 = analog_read_stream_create (GYRUS_PIN_A4);
-//  sources->A5 = analog_read_stream_create (GYRUS_PIN_A5);
-//  sources->A6 = analog_read_stream_create (GYRUS_PIN_A6);
-//  sources->A7 = analog_read_stream_create (GYRUS_PIN_A7);
+  sources->A0 = analog_read_stream_create (GYRUS_PIN_A0);
+  sources->A1 = analog_read_stream_create (GYRUS_PIN_A1);
+  sources->A2 = analog_read_stream_create (GYRUS_PIN_A2);
+  sources->A3 = analog_read_stream_create (GYRUS_PIN_A3);
+  sources->A4 = analog_read_stream_create (GYRUS_PIN_A4);
+  sources->A5 = analog_read_stream_create (GYRUS_PIN_A5);
+  sources->A6 = analog_read_stream_create (GYRUS_PIN_A6);
+  sources->A7 = analog_read_stream_create (GYRUS_PIN_A7);
   return sources;
 }
