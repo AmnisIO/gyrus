@@ -12,6 +12,6 @@ typedef struct DigitalWriteListener {
   Boolean _started;
 } DigitalWriteListener;
 
-RivuletListener *digital_write_listener_create(Pin pin);
+RivuletListener *digital_write_listener_create (Pin pin);
 
 #endif //GYRUS_ARDUINO_UNO_DIGITALWRITELISTENER_H
