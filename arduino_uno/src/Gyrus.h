@@ -7,6 +7,6 @@
 
 typedef Sinks *(*gyrus_application) (Sources *sources);
 
-void gyrus_run(gyrus_application application);
+void gyrus_run (gyrus_application application);
 
 #endif //GYRUS_ARDUINO_UNO_GYRUS_H
