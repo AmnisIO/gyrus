@@ -9,7 +9,7 @@ static void _pin_read (void *self) {
   AnalogReadProducer *producer = self;
   int value = analogRead (producer->_pin);
   RivuletListener *listener = producer->_listener;
-  rivulet_listener_registry_get_next (listener) (listener, value);
+  rivulet_listener_registry_get_next (listener->listener_type) (listener, value);
 }
 
 static void _start (RivuletProducer *self, RivuletListener *listener) {
