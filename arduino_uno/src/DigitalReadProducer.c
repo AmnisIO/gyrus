@@ -10,7 +10,7 @@ static void _pin_read (void *self) {
   int value = digitalRead (producer->_pin);
   int input = value == GYRUS_SIGNAL_LEVEL_LOW ? GYRUS_SIGNAL_LEVEL_LOW : GYRUS_SIGNAL_LEVEL_HIGH;
   RivuletListener *listener = producer->_listener;
-  rivulet_listener_registry_get_next (listener) (listener, input);
+  rivulet_listener_registry_get_next (listener->listener_type) (listener, input);
 }
 
 static void _start (RivuletProducer *self, RivuletListener *listener) {
