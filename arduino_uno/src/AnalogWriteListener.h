@@ -12,6 +12,6 @@ typedef struct AnalogWriteListener {
   Boolean _started;
 } AnalogWriteListener;
 
-RivuletListener *analog_write_listener_create(Pin pin);
+RivuletListener *analog_write_listener_create (Pin pin);
 
 #endif //GYRUS_ARDUINO_UNO_ANALOGWRITELISTENER_H
