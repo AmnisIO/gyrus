@@ -1,8 +1,7 @@
 #ifndef GYRUS_ARDUINO_UNO_DIGITALREADPRODUCER_H
 #define GYRUS_ARDUINO_UNO_DIGITALREADPRODUCER_H
 
-#include "RivuletProducer.h"
-#include "RivuletTask.h"
+#include "Rivulet.h"
 #include "GyrusUtils.h"
 
 typedef struct DigitalReadProducer {

@@ -1,7 +1,7 @@
 #ifndef GYRUS_ARDUINO_UNO_ARDUINOUNOSOURCES_H
 #define GYRUS_ARDUINO_UNO_ARDUINOUNOSOURCES_H
 
-#include <RivuletStream.h>
+#include <Rivulet.h>
 
 typedef struct Sources {
   RivuletStream *D0;

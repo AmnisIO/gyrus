@@ -1,8 +1,7 @@
 #ifndef GYRUS_ARDUINO_UNO_ANALOGREADPRODUCER_H
 #define GYRUS_ARDUINO_UNO_ANALOGREADPRODUCER_H
 
-#include <RivuletStream.h>
-#include <RivuletTask.h>
+#include <Rivulet.h>
 #include "GyrusUtils.h"
 
 typedef struct AnalogReadProducer {

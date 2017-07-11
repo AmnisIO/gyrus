@@ -1,5 +1,5 @@
 #include <printf.h>
-#include <RivuletTask.h>
+#include <Rivulet.h>
 #include <GyrusUtils.h>
 #include "Arduino.h"
 
